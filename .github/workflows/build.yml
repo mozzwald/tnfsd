@@ -27,8 +27,20 @@ jobs:
           name: tnfsd_linux-x64
           path: bin/tnfsd
 
-  build-macos:
-    runs-on: macOS-latest
+  build-macos-arm64:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Build tnfsd
+        run: cd /Users/runner/work/tnfsd/tnfsd/src && make OS=BSD DEBUG=yes USAGELOG=yes
+      - uses: actions/upload-artifact@master
+        with:
+          name: tnfsd_macos-arm64
+          path: bin/tnfsd
+
+  build-macos-x64:
+    runs-on: macos-14-large
     steps:
       - name: Checkout
         uses: actions/checkout@v4
