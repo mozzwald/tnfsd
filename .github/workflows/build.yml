@@ -9,7 +9,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Build tnfsd
-        run: cd /home/runner/work/tnfsd/tnfsd/src && make OS=Windows_NT DEBUG=yes USAGELOG=yes
+        run: cd D:\a\tnfsd\tnfsd\src && make OS=Windows_NT DEBUG=yes USAGELOG=yes
       - uses: actions/upload-artifact@master
         with:
           name: tnfsd_win-x64
@@ -33,7 +33,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Build tnfsd
-        run: cd /home/runner/work/tnfsd/tnfsd/src && make OS=BSD DEBUG=yes USAGELOG=yes
+        run: cd /Users/runner/work/tnfsd/tnfsd/src && make OS=BSD DEBUG=yes USAGELOG=yes
       - uses: actions/upload-artifact@master
         with:
           name: tnfsd_macos-x64
